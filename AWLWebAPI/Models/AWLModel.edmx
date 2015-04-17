@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="awlDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="awlDbModelStoreContainer">
+          <EntitySet Name="collector" EntityType="awlDbModel.Store.collector" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="collector">
+          <Key>
+            <PropertyRef Name="building_id" />
+            <PropertyRef Name="gateway_id" />
+          </Key>
+          <Property Name="building_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="gateway_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="key" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Function Name="PROC_COLLECTOR_REQUEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="buildingId" Type="nvarchar" Mode="In" />
+          <Parameter Name="gatewayId" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="awlDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="awlDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="collector" EntityType="awlDbModel.collector" />
+          <FunctionImport Name="PROC_COLLECTOR_REQUEST" ReturnType="Collection(awlDbModel.PROC_COLLECTOR_REQUEST_Result)">
+            <Parameter Name="buildingId" Mode="In" Type="String" />
+            <Parameter Name="gatewayId" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="collector">
+          <Key>
+            <PropertyRef Name="building_id" />
+            <PropertyRef Name="gateway_id" />
+          </Key>
+          <Property Name="building_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="gateway_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="key" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="PROC_COLLECTOR_REQUEST_Result">
+          <Property Type="String" Name="building_id" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="gateway_id" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="key" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="awlDbModelStoreContainer" CdmEntityContainer="awlDbEntities">
+          <EntitySetMapping Name="collector">
+            <EntityTypeMapping TypeName="awlDbModel.collector">
+              <MappingFragment StoreEntitySet="collector">
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+                <ScalarProperty Name="gateway_id" ColumnName="gateway_id" />
+                <ScalarProperty Name="key" ColumnName="key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PROC_COLLECTOR_REQUEST" FunctionName="awlDbModel.Store.PROC_COLLECTOR_REQUEST">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awlDbModel.PROC_COLLECTOR_REQUEST_Result">
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+                <ScalarProperty Name="gateway_id" ColumnName="gateway_id" />
+                <ScalarProperty Name="key" ColumnName="key" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
