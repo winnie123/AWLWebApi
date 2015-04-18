@@ -10,5 +10,6 @@ namespace MvcApplication7.Models
         public string sequence { get; set; }
         public string time { get; set; }
         public List<MeterModel> meter { get; set; }
+        public string data { get; set; }
     }
 }
