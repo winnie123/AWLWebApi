@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -171,38 +174,269 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="InterFace\Filter\AuthorizationGateFilter.cs" />
+    <Compile Include="InterFace\Filter\Class1.cs" />
     <Compile Include="InterFace\Filter\ExceptionFilter.cs" />
-    <Compile Include="Models\AWLModel.Context.cs" />
-    <Compile Include="Models\AWLModel.Context1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AWLModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AWLModel.cs" />
-    <Compile Include="Models\AWLModel.Designer.cs">
-      <DependentUpon>AWLModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AWLModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AWLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AWLModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AWLModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\collector.cs">
-      <DependentUpon>AWLModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CommMode.cs" />
     <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\Entity\AWLEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWLEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\AWLEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\AWLEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWLEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Ca_aircondE1_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Ca_airCondE2_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\collector.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\dtproperties.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\dt_getpropertiesbyid_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\dt_getpropertiesbyid_u_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\F_ListDivisionByParent_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\PROC_COLLECTOR_REQUEST_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sp_AirConditionRealtime_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sp_InspectControlChart_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sp_InspectEnergyChart_Result.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\StandardValue.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAirconditionCollectedMap.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAirconditionGrade.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAirconditionSurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAirconditionSurveyDetail.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAirEfficiency.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAlarmConditon.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbAlarmRecord.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbBaseFee.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbBuildInfor.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbBuildStruct.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbControlCollection.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDailyRecord_CoolHeat.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDailyRecord_Oil.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDailyRecord_Tran.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDailyRecord_Water.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDayByHourList.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDayByMinuteList.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbDivision.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEmailParameter.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyCollection.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyCollection_ByDay.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyCollection_ByHour.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyFPGPower.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyofDivisionDetail.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyofDivisionHearder.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergyShape.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergysubSurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergySurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEnergySurveyHeader.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEquipment.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEquipmentMaintRecord.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbEquipmentRunRecord.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbExpertDoc.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbGradeDetail.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbGradeHeader.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbGroup.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbGroupStaff.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbImageMarkerDetail.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbImageMarkerHeader.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLightEfficiency.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLimitedTarget.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLoginInfor.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLookupDetail.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLookupHeader.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLoopMapping.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbLoopMap_OPC.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbMenuView.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbModel.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbPowerCollection.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbQueryCondition.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbRegion.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbReportList.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbStaff.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbStaffPurview.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tbSystemParameter.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Tbuserenergymap.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_CollectionMaxId.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergyChart.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergyCollection.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergyCollection_ByDay.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergyCollection_ByHour.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergySurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_EnergySurveyHeader.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\tmp_S_EnergyCollection.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\vwEnergyofUser_ByHour.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\vwEnergysubSurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\vwEnergySurvey.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\vwEnergy_Today_byUser.cs">
+      <DependentUpon>AWLEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\FunctionModel.cs" />
     <Compile Include="Models\MeterModel.cs" />
     <Compile Include="Models\OperationModel.cs" />
-    <Compile Include="Models\PROC_COLLECTOR_REQUEST_Result.cs">
-      <DependentUpon>AWLModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\RootModel.cs" />
     <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Models\TransDataModel.cs" />
     <Compile Include="Models\ValidateDataModel.cs" />
@@ -278,22 +512,28 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Models\AWLModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AWLModel.Context1.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\AWLModel.edmx">
+    <EntityDeploy Include="Models\Entity\AWLEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AWLModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>AWLEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\AWLModel.edmx.diagram">
-      <DependentUpon>AWLModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\AWLModel.tt">
+    <Content Include="Models\Entity\AWLEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AWLModel1.cs</LastGenOutput>
+      <DependentUpon>AWLEntity.edmx</DependentUpon>
+      <LastGenOutput>AWLEntity.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Entity\AWLEntity.edmx.diagram">
+      <DependentUpon>AWLEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entity\AWLEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AWLEntity.edmx</DependentUpon>
+      <LastGenOutput>AWLEntity.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\sss.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="MvcApplication7.csproj" />
+    <Content Include="MvcApplication7.csproj.user" />
+    <Content Include="Properties\PublishProfiles\sss.pubxml.user" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -337,9 +577,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

@@ -8,5 +8,6 @@ namespace MvcApplication7.Models
     public class MeterModel
     {
         public List<FunctionModel> function { get; set; }
+        public string time;
     }
 }

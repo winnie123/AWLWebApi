@@ -7,9 +7,9 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Description;
-using AWLWebAPI.Areas.HelpPage.Models;
+using MvcApplication7.Areas.HelpPage.Models;
 
-namespace AWLWebAPI.Areas.HelpPage
+namespace MvcApplication7.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace AWLWebAPI
+namespace MvcApplication7
 {
     public class BundleConfig
     {

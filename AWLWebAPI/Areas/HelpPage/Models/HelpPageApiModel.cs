@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
 
-namespace AWLWebAPI.Areas.HelpPage.Models
+namespace MvcApplication7.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

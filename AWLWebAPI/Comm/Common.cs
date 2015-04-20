@@ -15,7 +15,7 @@ namespace MvcApplication7.Comm
         /// <summary>
         /// 过期时间（分钟）
         /// </summary>
-        public static int Expires = 30;
+        public static int Expires = 900;
 
         public static string collectorPk = "hello123";
     }

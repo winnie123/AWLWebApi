@@ -1,9 +1,9 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using AWLWebAPI.Areas.HelpPage.Models;
+using MvcApplication7.Areas.HelpPage.Models;
 
-namespace AWLWebAPI.Areas.HelpPage.Controllers
+namespace MvcApplication7.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

@@ -26,5 +26,9 @@ namespace MvcApplication7.Models
         /// 采集数据
         /// </summary>
         public string data { get; set; }
+        /// <summary>
+        /// 辨别插入方式
+        /// </summary>
+        public string primary { get; set; }
     }
 }

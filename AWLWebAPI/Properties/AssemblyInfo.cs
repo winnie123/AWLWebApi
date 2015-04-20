@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列特性集
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("AWLWebAPI")]
+[assembly: AssemblyTitle("MvcApplication7")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("China")]
-[assembly: AssemblyProduct("AWLWebAPI")]
+[assembly: AssemblyProduct("MvcApplication7")]
 [assembly: AssemblyCopyright("版权所有(C) China 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("e6eeaed2-e722-400a-8e57-acb3dbda16db")]
+[assembly: Guid("7322d3b5-2e6c-4487-bf09-a11db73e9d0c")]
 
 // 程序集的版本信息由下列四个值组成:
 //
@@ -33,3 +33,4 @@ using System.Runtime.InteropServices;
 // 方法是按如下所示使用“*”:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: log4net.Config.DOMConfigurator(ConfigFile = "Web.config", Watch = false)]
